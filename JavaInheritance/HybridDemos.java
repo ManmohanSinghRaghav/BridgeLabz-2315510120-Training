@@ -32,6 +32,11 @@ interface Refuelable { void refuel(); }
 class VehicleBase {
     private int maxSpeed; private String model;
     public VehicleBase(int maxSpeed, String model) { this.maxSpeed = maxSpeed; this.model = model; }
+
+    @Override
+    public String toString() {
+        return "Vehicle[model=" + model + ", maxSpeed=" + maxSpeed + "]";
+    }
 }
 
 class ElectricVehicle extends VehicleBase {
@@ -51,9 +56,11 @@ public class HybridDemos {
         Worker[] workers = new Worker[] { new Chef("Gordon", 101), new Waiter("Sam", 102) };
         for (Worker w : workers) w.performDuties();
 
-        ElectricVehicle ev = new ElectricVehicle(160, "E-Model");
-        ev.charge();
-        PetrolVehicle pv = new PetrolVehicle(180, "P-Model");
-        pv.refuel();
+    ElectricVehicle ev = new ElectricVehicle(160, "E-Model");
+    ev.charge();
+    System.out.println(ev);
+    PetrolVehicle pv = new PetrolVehicle(180, "P-Model");
+    pv.refuel();
+    System.out.println(pv);
     }
 }
