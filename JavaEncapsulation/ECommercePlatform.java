@@ -1,3 +1,4 @@
+package JavaEncapsulation;
 import java.util.*;
 
 // Abstract class Product
